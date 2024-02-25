@@ -6,11 +6,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    env:
-      FTP_HOST: ${{ secrets.FTP_HOST }}
-      FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+    environment: production
 
     steps:
       - uses: actions/checkout@v4
