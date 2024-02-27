@@ -5,9 +5,14 @@ export default {
     extend: {
       colors: {
         primary: '#EE4A58',
+        indigo: '#0e1a25',
+        'indigo-dark': '#070e14',
       },
       fontFamily: {
         display: ['Roboto'],
+      },
+      fontSize: {
+        base: '1.08em',
       },
       container: {
         padding: '2em',
