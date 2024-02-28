@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <SiteHeader>
-        <div className="container mx-auto flex-1">
+        <div className="flex-1">
           <Title />
         </div>
         <ul className="list-none self-end flex space-x-5">
@@ -98,6 +98,11 @@ function App() {
           tags={['react', 'api', 'websockets']}
         />
       </div>
+      <footer className="bg-indigo-dark mt-24 border-t border-black text-[#bebebe] text-sm">
+        <div className="container mx-auto py-4">
+          Thanks for visiting! This site was designed & developed by Neil Thom
+        </div>
+      </footer>
     </>
   )
 }

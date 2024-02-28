@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes site-header-transition {
+  from { height: 200vh }
+  to { height: 200px }
+}
+
 .site-header {
+  animation-name: site-header-transition;
+  animation-duration: .8s;
+  animation-iteration-count: 1;
   background: #e12a4f;
   clip-path: polygon(100% 0, 0 0, 0 50%, 100% 100%);
-  min-height: 120px;
+  height: 200px;
   padding-top: 20px;
   padding-bottom: 100px;
   width: 100%;

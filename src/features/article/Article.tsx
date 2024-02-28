@@ -24,25 +24,27 @@ const WithLink = ({ linkToUrl, children }: { linkToUrl?: string } & React.PropsW
 }
 
 export const Article = ({ textContent, pillText, img, tags, title, linkToUrl, ...rest }: Props) => (
-  <div className="h-full lg:flex bg-white/5 rounded-lg mx-auto border border-indigo-dark" {...rest}>
-    <div className="h-max lg:max-w-[400px]">
+  <div className="h-full items-stretch lg:flex rounded-lg mx-auto" {...rest}>
+    <div className="lg:h-full">
       <WithLink linkToUrl={linkToUrl}>
-        <img src={img} className="h-max w-full object-contain" />
+        <img src={img} className="w-full object-contain" />
       </WithLink>
     </div>
-    <div className="flex-1 p-5 border-l border-indigo-dark">
+    <div className="flex-1 p-5 bg-white/5 border border-indigo-dark">
       <Pill>{pillText}</Pill>
-      <Heading variant="secondary" tagName="h1" className="text-3xl my-6">
+      <div className="flex items-center">
+        <Heading variant="secondary" tagName="h1" className="text-2xl">
+          <WithLink linkToUrl={linkToUrl}>{title}</WithLink>
+        </Heading>
         <WithLink linkToUrl={linkToUrl}>
-          {title}
-          {linkToUrl && linkToUrl.length && <IconExternalLink className="inline ml-4" />}
+          {linkToUrl && linkToUrl.length && <IconExternalLink className="inline ml-4 text-primary" />}
         </WithLink>
-      </Heading>
+      </div>
       <p className="text-white text-base space-y-4 leading-7">{textContent}</p>
       <ul className="list-none flex space-x-3 mt-6 text-base">
         {tags &&
           tags.length &&
-          tags.map((tag) => <li className="rounded-full font-bold text-sm text-primary italic">#{tag}</li>)}
+          tags.map((tag) => <li className="rounded-full font-bold text-sm text-white italic">#{tag}</li>)}
       </ul>
     </div>
   </div>

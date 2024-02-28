@@ -12,7 +12,7 @@ export default {
         display: ['Roboto'],
       },
       fontSize: {
-        base: '1.08em',
+        base: '1em',
       },
       container: {
         padding: '2em',
