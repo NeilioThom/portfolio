@@ -32,10 +32,14 @@ function App() {
           </li>
         </ul>
       </SiteHeader>
-      <div className="container mx-auto mt-8 mb-20">
+      <div className="container mx-auto mt-2 mb-16">
         <div className="lg:flex lg:space-x-24">
           <div className="mx-auto lg:mx-0">
-            <img src={me} className="lg:w-[300px] lg:h-[300px] w-[250px] h-[250px] mx-auto block" />
+            <img
+              src={me}
+              className="lg:w-[300px] lg:h-[300px] w-[250px] h-[250px] mx-auto block"
+              alt="Stylized photograph of Neil with a happy dog"
+            />
           </div>
           <div className="flex-1">
             <Heading variant="secondary" tagName="h2" className="text-4xl lg:text-6xl my-8">
@@ -79,6 +83,7 @@ function App() {
           tags={['vue', 'html', 'css', 'accessibility']}
         />
         <Article
+          reverse={true}
           img={finance}
           textContent={
             <>

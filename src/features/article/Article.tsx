@@ -1,6 +1,7 @@
 import { Pill } from '@/features/pill'
 import { Heading } from '@/features/heading'
 import { IconExternalLink } from '@tabler/icons-react'
+import clsx from 'clsx'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   title: string
@@ -9,6 +10,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   linkToUrl?: string
   img: string
   tags?: string[]
+  reverse?: boolean
 }
 
 const WithLink = ({ linkToUrl, children }: { linkToUrl?: string } & React.PropsWithChildren) => {
@@ -23,9 +25,9 @@ const WithLink = ({ linkToUrl, children }: { linkToUrl?: string } & React.PropsW
   return <>{children}</>
 }
 
-export const Article = ({ textContent, pillText, img, tags, title, linkToUrl, ...rest }: Props) => (
+export const Article = ({ textContent, pillText, img, tags, title, linkToUrl, reverse, ...rest }: Props) => (
   <div className="h-full items-stretch lg:flex rounded-lg mx-auto" {...rest}>
-    <div className="lg:h-full">
+    <div className={clsx('lg:h-full', { 'order-last': reverse })}>
       <WithLink linkToUrl={linkToUrl}>
         <img src={img} className="w-full object-contain" />
       </WithLink>
@@ -33,7 +35,7 @@ export const Article = ({ textContent, pillText, img, tags, title, linkToUrl, ..
     <div className="flex-1 p-5 bg-white/5 border border-indigo-dark">
       <Pill>{pillText}</Pill>
       <div className="flex items-center">
-        <Heading variant="secondary" tagName="h1" className="text-2xl">
+        <Heading variant="secondary" tagName="h1" className="text-2xl text-right">
           <WithLink linkToUrl={linkToUrl}>{title}</WithLink>
         </Heading>
         <WithLink linkToUrl={linkToUrl}>
