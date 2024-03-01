@@ -35,7 +35,7 @@ export const Article = ({ textContent, pillText, img, tags, title, linkToUrl, re
     <div className="flex-1 p-5 bg-white/5 border border-indigo-dark">
       <Pill>{pillText}</Pill>
       <div className="flex items-center">
-        <Heading variant="secondary" tagName="h1" className="text-2xl text-right">
+        <Heading variant="secondary" tagName="h1" className="text-2xl">
           <WithLink linkToUrl={linkToUrl}>{title}</WithLink>
         </Heading>
         <WithLink linkToUrl={linkToUrl}>
